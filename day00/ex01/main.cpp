@@ -6,7 +6,7 @@
 /*   By: fardath <fardath@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 19:52:01 by fardath           #+#    #+#             */
-/*   Updated: 2022/11/05 17:25:43 by fardath          ###   ########.fr       */
+/*   Updated: 2022/11/05 18:32:41 by fardath          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,8 @@ int main()
 		std::getline(std::cin, command);
 		if (command == "ADD")
 			phone.add();
+		if (command == "SEARCH")
+			phone.search();
 	}
+	return(0);
 }
