@@ -1,8 +1,8 @@
 NAME = PhoneBook
-SRC	=	main.cpp
+SRC	=	main.cpp Contact.cpp   PhoneBook.cpp 
 CC	=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
-HEADERS	=	
+HEADERS	=	Contact.hpp PhoneBook.cpp
 OBJ		=	$(SRC:.cpp=.o)
 .PHONY: all clean fclean re
 
