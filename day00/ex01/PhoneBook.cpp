@@ -6,7 +6,7 @@
 /*   By: fardath <fardath@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 19:52:31 by fardath           #+#    #+#             */
-/*   Updated: 2022/11/05 19:14:32 by fardath          ###   ########.fr       */
+/*   Updated: 2022/11/07 20:55:02 by fardath          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ void PhoneBook::add(void)
 
 	str = "";
 	if (this->index > 7)
-		std::cout << "The first contact will be change" << this->contacts[this->index % 8].get_fname() << std::endl;
+	{
+		std::cout << "The first contact will be change " << this->contacts[this->index % 8].get_fname() << std::endl;
+		this->index = 0;
+	}
 	while (!std::cin.eof() && str == "")
 	{
 		std::cout << "Enter first name: ";

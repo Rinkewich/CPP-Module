@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fardath <fardath@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 19:36:56 by fardath           #+#    #+#             */
-/*   Updated: 2022/11/07 14:43:18 by fardath          ###   ########.fr       */
+/*   Created: 2022/11/08 15:45:23 by fardath           #+#    #+#             */
+/*   Updated: 2022/11/08 17:46:20 by fardath          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int main()
+#include <iostream>
+#include <string.h>
+class Weapon
 {
-	/*first zombir*/
-	Zombie Zombie1("Deril");
-	Zombie1.announcement();
-	/*second zombie*/
-	Zombie *Zombie2 = newZombie("Rick");
-	Zombie2->announcement();
-	delete Zombie2;
-	/*third zombie*/
-	randomChump("Caroll");
-	return (0);
-}
+	private:
+		std::string _weapon;
+	public:
+		Weapon(std::string weapon);
+		~Weapon();
+		const std::string& GetType();
+		void setType(std::string weapon); 
+};
+
+
+#endif

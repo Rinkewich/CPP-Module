@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fardath <fardath@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/01 19:33:50 by fardath           #+#    #+#              #
-#    Updated: 2022/11/08 13:52:04 by fardath          ###   ########.fr        #
+#    Created: 2022/11/05 19:31:21 by fardath           #+#    #+#              #
+#    Updated: 2022/11/08 15:43:36 by fardath          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
-SRC	=	megaphone.cpp
+NAME = pointer
+SRC	=	main.cpp
 CC	=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 HEADERS	=	
@@ -23,7 +23,7 @@ all:	$(NAME)
 $(NAME): $(OBJ) $(HEADERS)
 	$(CC) $(FLAGS) -o $(NAME) $(OBJ)
 
-%.o: %.cpp
+%.o: %.cpp 
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

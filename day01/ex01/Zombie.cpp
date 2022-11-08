@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fardath <fardath@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 19:36:56 by fardath           #+#    #+#             */
-/*   Updated: 2022/11/07 14:43:18 by fardath          ###   ########.fr       */
+/*   Created: 2022/11/05 19:37:47 by fardath           #+#    #+#             */
+/*   Updated: 2022/11/07 15:10:21 by fardath          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
-int main()
+Zombie::Zombie()
 {
-	/*first zombir*/
-	Zombie Zombie1("Deril");
-	Zombie1.announcement();
-	/*second zombie*/
-	Zombie *Zombie2 = newZombie("Rick");
-	Zombie2->announcement();
-	delete Zombie2;
-	/*third zombie*/
-	randomChump("Caroll");
-	return (0);
+}
+
+Zombie::~Zombie(void)
+{
+	std::cout << "/sounds of "<< this->name <<"'s death....*_*/\n";
+}
+void Zombie::announcement(void)
+{
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ...\n";
+}
+void Zombie::zombie_name(std::string name)
+{
+	this->name = name;
 }
