@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fardath <fardath@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 20:19:34 by fardath           #+#    #+#             */
-/*   Updated: 2022/11/20 16:53:18 by fardath          ###   ########.fr       */
+/*   Created: 2022/11/20 20:07:04 by fardath           #+#    #+#             */
+/*   Updated: 2022/11/20 20:32:08 by fardath          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAV_TRAP_HPP
-# define SCAV_TRAP_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
+#include <iostream>
+#include "Animal.hpp"
+class Brain 
 {
-	protected:
-		bool gateMode;
-	public: 
-		ScavTrap(std::string _name);
-		ScavTrap(ScavTrap const &other);
-		~ScavTrap();
-		void attack(const std::string& target);
-    	ScavTrap &operator=(ScavTrap const &other);
-		void guardGate();
+	public:
+		Brain();
+		Brain(Brain const & other);
+		~Brain();
+		Brain &operator=(Brain const &rhs);
+        std::string idias[100];
 };
+
+
 #endif

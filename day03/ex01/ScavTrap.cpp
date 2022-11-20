@@ -6,7 +6,7 @@
 /*   By: fardath <fardath@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 20:19:42 by fardath           #+#    #+#             */
-/*   Updated: 2022/11/19 20:44:16 by fardath          ###   ########.fr       */
+/*   Updated: 2022/11/20 16:52:33 by fardath          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,16 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-
+void ScavTrap::attack(const std::string& target)
+{
+	if(this->energy_points > 0 && hit_points > 0)
+	{
+		this->energy_points -= 1;
+		std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->attack_damage << " points of damage!\n";
+	}
+	else
+		std::cout << "ScavTrap " << this->_name << " doesn't have energy or live to attack\n";
+}
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 {
 	std::cout << "ScavTrap copy operator called\n";
