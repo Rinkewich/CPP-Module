@@ -6,7 +6,7 @@
 /*   By: fardath <fardath@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:42:49 by fardath           #+#    #+#             */
-/*   Updated: 2022/11/21 17:01:10 by fardath          ###   ########.fr       */
+/*   Updated: 2022/11/21 17:27:25 by fardath          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
 		Animal();
 		Animal(Animal const &other);
 		virtual ~Animal();
-		virtual void makeSound(void) const;
+		virtual void makeSound(void) const = 0;
 		std::string getType(void) const;
 		Animal &operator=(Animal const &other);
 		virtual Brain 		*getBrain(void) const = 0;
