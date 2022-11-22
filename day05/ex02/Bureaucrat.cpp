@@ -6,7 +6,7 @@
 /*   By: fardath <fardath@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:33:31 by fardath           #+#    #+#             */
-/*   Updated: 2022/11/22 14:04:27 by fardath          ###   ########.fr       */
+/*   Updated: 2022/11/22 14:08:17 by fardath          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,27 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat const &instance)
 {
 	os <<instance.getName() <<", bureaucrat grade "<< instance.getGrade() << ".";
 	return (os);
+}
+
+void Bureaucrat::signForm(AForm &target)
+{
+	try {
+		target.beSigned(*this);
+		std::cout << name << " signed " << target.getName() << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << name << " couldn't sign " << target.getName() <<
+		" because " << e.what() << std::endl;
+	}
+}
+void Bureaucrat::executeForm(const AForm &form)
+{
+	try {
+		form.execute(*this);
+		std::cout << name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << name << " couldn't execute " << form.getName()
+		<< " because " << e.what() << std::endl;
+	}
 }

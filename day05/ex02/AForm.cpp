@@ -1,94 +1,95 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fardath <fardath@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 20:19:33 by fardath           #+#    #+#             */
-/*   Updated: 2022/11/22 15:02:16 by fardath          ###   ########.fr       */
+/*   Updated: 2022/11/22 14:02:32 by fardath          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Form::Form()
+AForm::AForm()
 {
-	std::cout << "Classic Form constructor\n";
+	std::cout << "Classic AForm constructor\n";
 	this->name = "Default";
 	this->gradeExecute = 150;
 	this->gradeSing = 150;
 	this->isSigned = false;
 }
-Form::Form(std::string name, int gradeSing, int gradeExecute)
+AForm::AForm(std::string name, int gradeSing, int gradeExecute)
 {
-	std::cout << "Form constructor whit param\n";
+	std::cout << "AForm constructor whit param\n";
 	this->name = name;
 	this->gradeExecute = gradeExecute;
 	this->gradeSing = gradeSing;
 	this->isSigned = false;
 	if (gradeSing < 1 || gradeExecute < 1)
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	if (gradeSing > 150 || gradeExecute > 150)
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 }
 
-Form::~Form()
+AForm::~AForm()
 {
-	std::cout << "Form destructor\n";
+	std::cout << "AForm destructor\n";
 }
-Form::Form(Form const &other)
+AForm::AForm(AForm const &other)
 {
-	std::cout << "Form copy constructor\n";
 	this->name = other.getName();
 	this->gradeExecute = other.getGradeExecute();
 	this->gradeSing = other.getGradeSing();
 	this->isSigned = other.getIsSigned();
 }
-Form &Form::operator=(Form const &other)
+AForm &AForm::operator=(AForm const &other)
 {
-	std::cout << "Form copy assigment constructor\n";
 	this->name = other.getName();
 	this->gradeExecute = other.getGradeExecute();
 	this->gradeSing = other.getGradeSing();
 	this->isSigned = other.getIsSigned();
 	return (*this);
 }
-std::string Form::getName() const
+std::string AForm::getName() const
 {
 	return this->name;
 }
-bool Form::getIsSigned() const
+bool AForm::getIsSigned() const
 {
 	return this->isSigned;
 }
-int Form::getGradeSing() const
+int AForm::getGradeSing() const
 {
 	return this->gradeSing;
 }
-int Form::getGradeExecute() const
+int AForm::getGradeExecute() const
 {
 	return this->gradeExecute;
 }
 
-void Form::beSigned(Bureaucrat & Bureaucrat)
+void AForm::beSigned(Bureaucrat & Bureaucrat)
 {
 	if (this->gradeSing < Bureaucrat.getGrade())
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	this->isSigned = true;
 }
-char const	*Form::GradeTooLowException::what(void) const throw()
+char const	*AForm::GradeTooLowException::what(void) const throw()
 {
 	return ("Grade is too low");
 };
-char const	*Form::GradeTooHighException::what(void) const throw()
+char const	*AForm::GradeTooHighException::what(void) const throw()
 {
 	return ("Grade is too high");
 };
-
-std::ostream& operator<<(std::ostream &os, Form const &instance)
+char const	*AForm::IsNotSignedFormException::what(void) const throw()
 {
-	
+	return ("The Form is not signed");
+};
+
+std::ostream& operator<<(std::ostream &os, AForm const &instance)
+{
 	return os << "Form: " << instance.getName() << ", isSigned: " << instance.getIsSigned()
 			   << ", gradeToSign: " << instance.getGradeSing()
 			   << ", gradeToExecute: " << instance.getGradeExecute();

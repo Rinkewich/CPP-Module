@@ -6,7 +6,7 @@
 /*   By: fardath <fardath@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:33:31 by fardath           #+#    #+#             */
-/*   Updated: 2022/11/21 21:08:59 by fardath          ###   ########.fr       */
+/*   Updated: 2022/11/22 14:04:18 by fardath          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Bureaucrat const &Bureaucrat::operator=(Bureaucrat const &other)
 }
 Bureaucrat::~Bureaucrat()
 {
-	
+	std::cout << "Bureaucrat destructor called\n";
 };
 Bureaucrat::Bureaucrat(Bureaucrat const &other)
 {
